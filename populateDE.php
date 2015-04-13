@@ -1,5 +1,9 @@
 <?php
 
+display_errors("on");
+
+var_dump('bonjour, tout le monde');exit();
+
 require('lib/fuelsdk/ET_Client.php');
 try {	
 	$myclient = new ET_Client();
