@@ -35,7 +35,7 @@ try {
     var_dump('Exception',$ex);
 }
 
-var_dump($session);
+var_dump($ourLoginUrl,$session);
 
 if($session) {
 
