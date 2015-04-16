@@ -18,7 +18,7 @@ use Facebook\FacebookRequestException;
 ?><!doctype html>
 <html lang="en">
     <head><title>Facebook authentication POC</title>
-        <link type="text/css" href="assets/css/bootstrap.min.css">
+        <link type="text/css" rel="stylesheet" href="assets/css/bootstrap.min.css">
         <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,7 +34,7 @@ use Facebook\FacebookRequestException;
 $helper = new FacebookRedirectLoginHelper($ourLoginUrl);
 $loginUrl = $helper->getLoginUrl(array('scope'=>'public_profile,user_birthday,email'));
 
-echo "<p><a href=\"".$loginUrl."\">Log in via Facebook</a></p>";
+echo "<p><a href=\"".$loginUrl."\" class=\"btn btn-lg btn-success\">Log in via Facebook</a></p>";
     ?>
         </div></body>
 </html>
