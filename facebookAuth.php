@@ -9,9 +9,11 @@ date_default_timezone_set("Australia/Sydney");
 
 require("facebook-sdk/autoload.php");
 
-$var = "hello";
+$var = "hello 你好";
 $len = strlen($var);
 $mbLen = mb_strlen($var);
+
+var_dump($var, $len, $mbLen);
 
 use Facebook\FacebookSession;
 use Facebook\FacebookRedirectLoginHelper;
