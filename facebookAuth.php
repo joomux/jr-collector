@@ -23,7 +23,7 @@ use Facebook\FacebookRequestException;
     <?php
     FacebookSession::setDefaultApplication('1584536598430668', '89d37b60577695dce29a3e1dc0c2d2fa');
 
-    $ourLoginUrl = 'http://'.$_SERVER['HTTP_HOST'].'/jr-collector/facebookLogin.php';
+    $ourLoginUrl = 'http://'.$_SERVER['HTTP_HOST'].'/facebookLogin.php';
 
 
 $helper = new FacebookRedirectLoginHelper($ourLoginUrl);
