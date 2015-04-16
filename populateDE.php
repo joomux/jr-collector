@@ -68,7 +68,7 @@ try {
 ?>
 <!doctype html>
 <html lang="en">
-    <head><title>Facebook authentication POC</title>
+    <head><title>We've saved your details</title>
         <link type="text/css" rel="stylesheet" href="assets/css/bootstrap.min.css">
         <style type="text/css">body {
                 padding-top: 20px;
@@ -81,7 +81,7 @@ try {
 
     <body><div class="container"><?php
 if ($success) {
-    print "<p class=\"text-success\">Thanks, ".$_POST['FirstName']."! We've saved your details!</p>";
+    print "<p class=\"text-success\" align=\"center\">Thanks, ".$_POST['FirstName']."! We've saved your details!</p>";
 } else {
     print "<p class=\"text-warning\">Sorry, something went wrong.</p>";
 }

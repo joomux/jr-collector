@@ -3,7 +3,7 @@ session_start();
 ?>
 <!doctype html>
 <html lang="en">
-    <head><title>Facebook authentication POC</title>
+    <head><title>Tell us what you love</title>
         <link type="text/css" rel="stylesheet" href="assets/css/bootstrap.min.css">
         <style type="text/css">body {
                 padding-top: 20px;
