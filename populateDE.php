@@ -65,11 +65,25 @@ try {
 	catch (Exception $e) {
     echo 'Caught exception: ',  $e->getMessage(), "\n";
 }
+?>
+<!doctype html>
+<html lang="en">
+    <head><title>Facebook authentication POC</title>
+        <link type="text/css" rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <style type="text/css">body {
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }</style>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
 
+    <body><div class="container"><?php
 if ($success) {
-    print "<p>Thanks, ".$_POST['FirstName']."! We've saved your details!</p>";
+    print "<p class=\"text-success\">Thanks, ".$_POST['FirstName']."! We've saved your details!</p>";
 } else {
-    print "<p>Sorry, something went wrong.</p>";
+    print "<p class=\"text-warning\">Sorry, something went wrong.</p>";
 }
 
-?>
+?></div></body></html>
