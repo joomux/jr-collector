@@ -37,32 +37,39 @@ foreach($newRowArray as $key) {
 if ($newRowArray['EmailAddress'] == NULL){
     $newRowArray['EmailAddress'] = 'dcoghill@example.com';
     $newRowArray['DOB'] = '1/1/1980';
-    echo 'POST is blank, so inserting test email address.<br>';
+    //echo 'POST is blank, so inserting test email address.<br>';
 }
 
 try {	
 	$myclient = new ET_Client();//true, false, $config);
 
 	// Add a row to a DataExtension 
-	print_r("Add a row to a DataExtension  <br>\n");
+	//print_r("Add a row to a DataExtension  <br>\n");
 	$postDRRow = new ET_DataExtension_Row();
 	$postDRRow->authStub = $myclient;
 	$postDRRow->props = $newRowArray;
 	$postDRRow->Name = $DataExtensionNameForTesting;	
 	$postResult = $postDRRow->post();
-	print_r('Post Status: '.($postResult->status ? 'true' : 'false')."<br>\n");
+	//print_r('Post Status: '.($postResult->status ? 'true' : 'false')."<br>\n");
 	//print 'Code: '.$postResult->code."\n";
 	//print 'Message: '.$postResult->message."\n";	
 	//print 'Result Count: '.count($postResult->results)."\n";
 	//print 'Results: '."\n";
 	//print_r($postResult->results);
 	//print "\n---------------\n";
+        
+        $success = $postResult->status;
+        
 	
 	}
 	catch (Exception $e) {
     echo 'Caught exception: ',  $e->getMessage(), "\n";
 }
 
-echo 'Test complete';
+if ($success) {
+    print "<p>Thanks, ".$_POST['FirstName']."! We've saved your details!</p>";
+} else {
+    print "<p>Sorry, something went wrong.</p>";
+}
 
 ?>

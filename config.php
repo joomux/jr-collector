@@ -4,5 +4,5 @@ return array(
 	'clientid' => 'wjm7t56gtkrzsfz38nrkfp7a',
 	'clientsecret' => 'JNCpQMMg3aAZ9FSKRMgkXvnu',
 	'defaultwsdl' => 'https://webservice.exacttarget.com/etframework.wsdl'//,
-    //'xmlloc' => '/some/path/to/cache/ExactTargetWSDL.xml',
+    //'xmlloc' => '/tmp/ExactTargetWSDL.xml',
 );

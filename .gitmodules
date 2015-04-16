@@ -1,3 +1,0 @@
-[submodule "lib/fuelsdk"]
-	path = lib/fuelsdk
-	url = https://github.com/ExactTarget/FuelSDK-PHP
