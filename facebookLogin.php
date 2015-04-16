@@ -18,8 +18,8 @@ use Facebook\FacebookRequestException;
 FacebookSession::setDefaultApplication('1584536598430668', '89d37b60577695dce29a3e1dc0c2d2fa');
 
 
-$ourLoginUrl = 'http://'.$_SERVER['HTTP_HOST'].'/jr-collector/facebookLogin.php';
-$currentUrl = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+$ourLoginUrl = 'https://'.$_SERVER['HTTP_HOST'].'/facebookLogin.php';
+$currentUrl = 'https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
 $helper = new FacebookRedirectLoginHelper($ourLoginUrl);
 
@@ -34,6 +34,8 @@ try {
   // When validation fails or other local issues
     var_dump('Exception',$ex);
 }
+
+var_dump($session);
 
 if($session) {
 
