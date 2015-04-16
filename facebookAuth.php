@@ -9,12 +9,6 @@ date_default_timezone_set("Australia/Sydney");
 
 require("facebook-sdk/autoload.php");
 
-$var = "hello 你好";
-$len = strlen($var);
-$mbLen = mb_strlen($var);
-
-var_dump($var, $len, $mbLen);
-
 use Facebook\FacebookSession;
 use Facebook\FacebookRedirectLoginHelper;
 use Facebook\FacebookRequest;
@@ -29,7 +23,7 @@ use Facebook\FacebookRequestException;
     <?php
     FacebookSession::setDefaultApplication('1584536598430668', '89d37b60577695dce29a3e1dc0c2d2fa');
 
-    $ourLoginUrl = 'http://'.$_SERVER['HTTP_HOST'].'/facebookLogin.php';
+    $ourLoginUrl = 'https://'.$_SERVER['HTTP_HOST'].'/facebookLogin.php';
 
 
 $helper = new FacebookRedirectLoginHelper($ourLoginUrl);
