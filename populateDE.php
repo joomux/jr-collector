@@ -30,7 +30,7 @@ require('fuelsdk/ET_Client.php');
 
 foreach($newRowArray as $key) {
     if (isset($_POST[$key])) {
-        if (is_int($_POST[$key])) {
+        if ($_POST[$key] == "1" || $_POST[$key] == "0") {
             $_POST[$key] = intval($_POST[$key]);
         }
         $newRowArray[$key] = $_POST[$key];
