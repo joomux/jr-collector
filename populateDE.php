@@ -18,7 +18,7 @@
 $DataExtensionNameForTesting = "Jardine-Facebook-POC";
 
 //Variables to be passed by POST
-$newRowArray = array('EmailAddress','FirstName','LastName','DOB','Gender','FacebookUserId');
+$newRowArray = array('EmailAddress','FirstName','LastName','DOB','Gender','FacebookUserId', 'LikesHawaiian', 'LikesSupreme', 'LikesGarlicBread');
 
 //----------
 ini_set("display_errors","on");

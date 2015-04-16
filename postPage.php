@@ -12,10 +12,17 @@ session_start();
             $fields = array("FirstName"=>"First Name","LastName"=>"Last Name","DOB"=>"Date of Birth","FacebookUserId"=> "Facebook User ID","Gender"=>"Gender","EmailAddress"=>"Email Address");
             foreach($fields as $name=>$label) {
              
-                echo '<p><label for="'.$name.'_field">'.$label.'<label></p><p><input name="'.$name.'_viewer" type="text" value="'.$_SESSION[$name].'" disabled id="'.$name.'_field"></label><input type="hidden" name="'.$name.'" value="'.$_SESSION[$name].'">';
+                echo '<input type="hidden" name="'.$name.'" value="'.$_SESSION[$name].'">';
             }
             
             ?>
+            <p>Hi, <?php print $_SESSION['FirstName'] ?>! Tell us what you love eating!</p>
+            <ul>
+                <li><label><input type="checkbox" name="LikesHawaiian" value="1">I love Hawaiian!</label></li>
+                <li><label><input type="checkbox" name="LikesSupreme" value="1">I love Supreme!</label></li>
+                <li><label><input type="checkbox" name="LikesGarlicBread" value="1">I love Garlic Bread!</label></li>
+
+            </ul>
             <p><input type="submit" name="submit" value="To the (Marketing) Cloud!!"></p>
         </form>
     </body>
