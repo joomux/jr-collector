@@ -36,7 +36,7 @@ foreach($newRowArray as $key) {
         $newRowArray[$key] = $_POST[$key];
         setcookie($key,$_POST[$key],$cookie_expiry);
     } else {
-        $newRowArray[$key] = '';
+        $newRowArray[$key] = 'FALSE';
         setcookie($key,"",$cookie_expiry); //blank out empty variables (such as unchecked checkboxes) or they'll always be set
     }
 }
