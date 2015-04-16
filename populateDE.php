@@ -34,8 +34,6 @@ foreach($newRowArray as $key) {
     }
 }
 
-var_dump($newRowArray);
-
 if ($newRowArray['EmailAddress'] == NULL){
     $newRowArray['EmailAddress'] = 'dcoghill@example.com';
     $newRowArray['DOB'] = '1/1/1980';
@@ -53,11 +51,11 @@ try {
 	$postDRRow->Name = $DataExtensionNameForTesting;	
 	$postResult = $postDRRow->post();
 	//print_r('Post Status: '.($postResult->status ? 'true' : 'false')."<br>\n");
-	print 'Code: '.$postResult->code."\n";
-	print 'Message: '.$postResult->message."\n";	
+	//print 'Code: '.$postResult->code."\n";
+	//print 'Message: '.$postResult->message."\n";	
 	//print 'Result Count: '.count($postResult->results)."\n";
 	//print 'Results: '."\n";
-	print_r($postResult->results);
+	//print_r($postResult->results);
 	//print "\n---------------\n";
         
         $success = $postResult->status;
