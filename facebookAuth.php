@@ -38,7 +38,7 @@ use Facebook\FacebookRequestException;
 $helper = new FacebookRedirectLoginHelper($ourLoginUrl);
 $loginUrl = $helper->getLoginUrl(array('scope'=>'public_profile,user_birthday,email'));
 
-echo "<p align=\"center\"><a href=\"".$loginUrl."\" class=\"btn btn-lg btn-success\">Log in with Facebook</a></p>";
+echo "<p align=\"center\"><a href=\"".$loginUrl."\" class=\"btn btn-lg btn-success\">Let's get started!</a></p>";
     ?>
         </div></body>
 </html>
