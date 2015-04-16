@@ -36,6 +36,7 @@ foreach($newRowArray as $key) {
         $newRowArray[$key] = $_POST[$key];
         setcookie($key,$_POST[$key],$cookie_expiry);
     } else {
+        $newRowArray[$key] = '';
         setcookie($key,"",$cookie_expiry); //blank out empty variables (such as unchecked checkboxes) or they'll always be set
     }
 }
@@ -49,23 +50,29 @@ if ($newRowArray['EmailAddress'] == NULL){
 try {	
 	$myclient = new ET_Client();//true, false, $config);
 
-	// Add a row to a DataExtension 
-	//print_r("Add a row to a DataExtension  <br>\n");
-	$postDRRow = new ET_DataExtension_Row();
-	$postDRRow->authStub = $myclient;
-	$postDRRow->props = $newRowArray;
-	$postDRRow->Name = $DataExtensionNameForTesting;	
-	$postResult = $postDRRow->post();
-	//print_r('Post Status: '.($postResult->status ? 'true' : 'false')."<br>\n");
-	//print 'Code: '.$postResult->code."\n";
-	//print 'Message: '.$postResult->message."\n";	
-	//print 'Result Count: '.count($postResult->results)."\n";
-	//print 'Results: '."\n";
-	//print_r($postResult->results);
-	//print "\n---------------\n";
+        //check if email address already exists
         
-        $success = $postResult->status;
         
+        if ($already_exists) {
+            
+        } else {
+            // Add a row to a DataExtension 
+            //print_r("Add a row to a DataExtension  <br>\n");
+            $postDRRow = new ET_DataExtension_Row();
+            $postDRRow->authStub = $myclient;
+            $postDRRow->props = $newRowArray;
+            $postDRRow->Name = $DataExtensionNameForTesting;	
+            $postResult = $postDRRow->patch();
+            print_r('Post Status: '.($postResult->status ? 'true' : 'false')."<br>\n");
+            print 'Code: '.$postResult->code."\n";
+            print 'Message: '.$postResult->message."\n";	
+            print 'Result Count: '.count($postResult->results)."\n";
+            print 'Results: '."\n";
+            print_r($postResult->results);
+            print "\n---------------\n";
+
+            $success = $postResult->status;
+        }
 	
 	}
 	catch (Exception $e) {
@@ -92,4 +99,4 @@ if ($success) {
     print "<p class=\"text-warning\">Sorry, something went wrong.</p>";
 }
 
-?><p align="center"><a href="facebookAuth.php" class="btn btn-success">Start over</a></p></div></body></html>
+?><p align="center"><a href="facebookAuth.php" class="btn btn-success">Return to the preference centre</a></p></div></body></html>
