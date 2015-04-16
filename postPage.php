@@ -18,9 +18,9 @@ session_start();
             ?>
             <p>Hi, <?php print $_SESSION['FirstName'] ?>! Tell us what you love eating!</p>
             <ul>
-                <li><label><input type="checkbox" name="LikesHawaiian" value="1">I love Hawaiian!</label></li>
-                <li><label><input type="checkbox" name="LikesSupreme" value="1">I love Supreme!</label></li>
-                <li><label><input type="checkbox" name="LikesGarlicBread" value="1">I love Garlic Bread!</label></li>
+                <li><label><input type="checkbox" name="LikesHawaiian" value="TRUE">I love Hawaiian!</label></li>
+                <li><label><input type="checkbox" name="LikesSupreme" value="TRUE">I love Supreme!</label></li>
+                <li><label><input type="checkbox" name="LikesGarlicBread" value="TRUE">I love Garlic Bread!</label></li>
 
             </ul>
             <p><input type="submit" name="submit" value="To the (Marketing) Cloud!!"></p>
