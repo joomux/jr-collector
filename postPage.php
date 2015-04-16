@@ -1,5 +1,9 @@
 <?php
-session_start();
+
+foreach($_COOKIE as $key=>$val) {
+    var_dump($key.': '.$val);
+}
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -20,7 +24,7 @@ session_start();
                 $fields = array("FirstName" => "First Name", "LastName" => "Last Name", "DOB" => "Date of Birth", "FacebookUserId" => "Facebook User ID", "Gender" => "Gender", "EmailAddress" => "Email Address");
                 foreach ($fields as $name => $label) {
 
-                    echo '<input type="hidden" name="' . $name . '" value="' . $_SESSION[$name] . '">';
+                    echo '<input type="hidden" name="' . $name . '" value="' . $_COOKIE[$name] . '">';
                 }
                 ?>
                 <p>Hi, <?php print $_SESSION['FirstName'] ?>! Tell us what you love eating!</p>

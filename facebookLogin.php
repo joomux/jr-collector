@@ -47,12 +47,14 @@ if($session) {
 
     $birthday = $user_profile->getBirthday();
     
-    $_SESSION['FirstName'] = $user_profile->getFirstName();
-    $_SESSION['LastName'] = $user_profile->getLastName();
-    $_SESSION['DOB'] = $birthday->format('m/d/Y');
-    $_SESSION['Gender'] = $user_profile->getGender();
-    $_SESSION['EmailAddress'] = $user_profile->getEmail();
-    $_SESSION['FacebookUserId'] = $user_profile->getId();
+    $cookie_expiry = time()+60*60*24*30;
+    
+    $setcookie('FirstName', $user_profile->getFirstName(),$cookie_expiry);
+    $setcookie('LastName', $user_profile->getLastName(),$cookie_expiry);
+    $setcookie('DOB', $birthday->format('m/d/Y'),$cookie_expiry);
+    $setcookie('Gender', $user_profile->getGender());
+    $setcookie('EmailAddress', $user_profile->getEmail(),$cookie_expiry);
+    $setcookie('FacebookUserId', $user_profile->getId(),$cookie_expiry);
     
     header("Location: postPage.php");
     exit();

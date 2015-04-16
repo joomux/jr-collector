@@ -28,9 +28,13 @@ date_default_timezone_set("Australia/Sydney");
 
 require('fuelsdk/ET_Client.php');
 
+$cookie_expiry = time()+60*60*24*30;
+
 foreach($newRowArray as $key) {
     if (isset($_POST[$key])) {
         $newRowArray[$key] = $_POST[$key];
+        
+        setcookie($key,$_POST[$key],$cookie_expiry);
     }
 }
 
