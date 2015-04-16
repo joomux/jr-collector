@@ -3,10 +3,20 @@ session_start();
 
 ?>
 <!doctype html>
-<html>
-    <head><title>Submit to Marketing Cloud</title></head>
-    <body>
-        <form action="populateDE.php" method="POST">
+<html lang="en">
+    <head><title>Facebook authentication POC</title>
+        <link type="text/css" rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <style type="text/css">body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}</style>
+        <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    
+    <body><div class="container">
+        <form action="populateDE.php" method="POST" class="post">
             <?php
             
             $fields = array("FirstName"=>"First Name","LastName"=>"Last Name","DOB"=>"Date of Birth","FacebookUserId"=> "Facebook User ID","Gender"=>"Gender","EmailAddress"=>"Email Address");
@@ -17,13 +27,11 @@ session_start();
             
             ?>
             <p>Hi, <?php print $_SESSION['FirstName'] ?>! Tell us what you love eating!</p>
-            <ul>
-                <li><label><input type="checkbox" name="LikesHawaiian" value="TRUE">I love Hawaiian!</label></li>
-                <li><label><input type="checkbox" name="LikesSupreme" value="TRUE">I love Supreme!</label></li>
-                <li><label><input type="checkbox" name="LikesGarlicBread" value="TRUE">I love Garlic Bread!</label></li>
-
-            </ul>
-            <p><input type="submit" name="submit" value="To the (Marketing) Cloud!!"></p>
+            <div class="checkbox">
+                <label><input type="checkbox" name="LikesHawaiian" value="TRUE" class="form-control">I love Hawaiian!</label></div>
+            <div class="checkbox"><label><input type="checkbox" name="LikesSupreme" value="TRUE" class="checkbox">I love Supreme!</label></div>
+            <div class="checkbox"><label><input type="checkbox" name="LikesGarlicBread" value="TRUE" class="checkbox">I love Garlic Bread!</label></div>
+            <input class="btn btn-lg btn-success" type="submit" name="submit" value="To the (Marketing) Cloud!!">
         </form>
     </body>
 </html>
