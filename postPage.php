@@ -30,21 +30,21 @@
                 <h1>Hi, <?php print $_COOKIE['FirstName'] ?>!</h1><p class="bg-success"><?php print $message; ?>.</p><p>Tell us what you love eating...</p>
                 <div class="row">
                     <div class="col-xs-4">
-                        <img src="assets/images/hawaiian.png" alt="Hawaiian">
+                        <img src="assets/images/hawaiian.png" alt="Hawaiian" style="max-width:100%">
                         <div class="checkbox">
                             <label>
                                 <input type="checkbox" name="LikesHawaiian" value="TRUE" class="checkbox"<?php print ($_COOKIE['LikesHawaiian']=='TRUE'?' checked':''); ?>>I love Hawaiian!</label>
                         </div>
                     </div>
                     <div class="col-xs-4">
-                        <img src="assets/images/supreme.png" alt="Supreme">
+                        <img src="assets/images/supreme.png" alt="Supreme" style="max-width:100%">
                         <div class="checkbox">
                             <label>
                                 <input type="checkbox" name="LikesSupreme" value="TRUE" class="checkbox"<?php print ($_COOKIE['LikesSupreme']=='TRUE'?' checked':''); ?>>I love Supreme!</label>
                         </div>
                     </div>
                     <div class="col-xs-4">
-                        <img src="assets/images/garlic-bread.png" alt="Garlic Bread">
+                        <img src="assets/images/garlic-bread.png" alt="Garlic Bread" style="max-width:100%">
                         <div class="checkbox">
                             <label>
                                 <input type="checkbox" name="LikesGarlicBread" value="TRUE" class="checkbox"<?php print ($_COOKIE['LikesGarlicBread']=='TRUE'?' checked':''); ?>>I love Garlic Bread!</label>
