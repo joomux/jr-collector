@@ -16,10 +16,15 @@ use Facebook\GraphUser;
 use Facebook\FacebookRequestException;
 
 ?><!doctype html>
-<html>
-    <head><title>Facebook authentication POC</title></head>
+<html lang="en">
+    <head><title>Facebook authentication POC</title>
+        <link type="text/css" href="assets/css/bootstrap.min.css">
+        <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
     
-    <body>
+    <body><div class="container">
     <?php
     FacebookSession::setDefaultApplication('1584536598430668', '89d37b60577695dce29a3e1dc0c2d2fa');
 
@@ -31,5 +36,5 @@ $loginUrl = $helper->getLoginUrl(array('scope'=>'public_profile,user_birthday,em
 
 echo "<p><a href=\"".$loginUrl."\">Log in via Facebook</a></p>";
     ?>
-    </body>
+        </div></body>
 </html>
