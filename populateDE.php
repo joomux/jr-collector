@@ -30,9 +30,14 @@ require('fuelsdk/ET_Client.php');
 
 foreach($newRowArray as $key) {
     if (isset($_POST[$key])) {
+        if (isint($_POST[$key])) {
+            $_POST[$key] = int($_POST[$key])
+        }
         $newRowArray[$key] = $_POST[$key];
     }
 }
+
+var_dump($newRowArray);
 
 if ($newRowArray['EmailAddress'] == NULL){
     $newRowArray['EmailAddress'] = 'dcoghill@example.com';
