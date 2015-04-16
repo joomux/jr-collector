@@ -56,13 +56,13 @@ try {
         $postDRRow->props = $newRowArray;
         $postDRRow->Name = $DataExtensionNameForTesting;	
         $postResult = $postDRRow->patch();
-        print_r('Post Status: '.($postResult->status ? 'true' : 'false')."<br>\n");
-        print 'Code: '.$postResult->code."\n";
-        print 'Message: '.$postResult->message."\n";	
-        print 'Result Count: '.count($postResult->results)."\n";
-        print 'Results: '."\n";
-        print_r($postResult->results);
-        print "\n---------------\n";
+//        print_r('Post Status: '.($postResult->status ? 'true' : 'false')."<br>\n");
+//        print 'Code: '.$postResult->code."\n";
+//        print 'Message: '.$postResult->message."\n";	
+//        print 'Result Count: '.count($postResult->results)."\n";
+//        print 'Results: '."\n";
+//        print_r($postResult->results);
+//        print "\n---------------\n";
         
         $success = $postResult->status;
         
@@ -76,13 +76,13 @@ try {
             $postDRRow->props = $newRowArray;
             $postDRRow->Name = $DataExtensionNameForTesting;	
             $postResult = $postDRRow->post();
-            print_r('Post Status: '.($postResult->status ? 'true' : 'false')."<br>\n");
-            print 'Code: '.$postResult->code."\n";
-            print 'Message: '.$postResult->message."\n";	
-            print 'Result Count: '.count($postResult->results)."\n";
-            print 'Results: '."\n";
-            print_r($postResult->results);
-            print "\n---------------\n";
+//            print_r('Post Status: '.($postResult->status ? 'true' : 'false')."<br>\n");
+//            print 'Code: '.$postResult->code."\n";
+//            print 'Message: '.$postResult->message."\n";	
+//            print 'Result Count: '.count($postResult->results)."\n";
+//            print 'Results: '."\n";
+//            print_r($postResult->results);
+//            print "\n---------------\n";
 
             $success = $postResult->status;
         }
