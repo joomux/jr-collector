@@ -26,8 +26,15 @@ foreach($_COOKIE as $key=>$val) {
 
                     echo '<input type="hidden" name="' . $name . '" value="' . $_COOKIE[$name] . '">';
                 }
+                
+                if ($_GET['known']==1) {
+                    $message = "Welcome back";
+                } else {
+                    $message = "It's your first time here";
+                }
+                
                 ?>
-                <p>Hi, <?php print $_SESSION['FirstName'] ?>! Tell us what you love eating!</p>
+                <h1>Hi, <?php print $_SESSION['FirstName'] ?>!</h1><p class="bg-success"><?php print $message; ?>.</p><p>Tell us what you love eating...</p>
                 <div class="row">
                     <div class="col-xs-4">
                         <img src="assets/images/hawaiian.png" alt="Hawaiian">

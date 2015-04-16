@@ -7,6 +7,14 @@ session_start();
 
 date_default_timezone_set("Australia/Sydney");
 
+//if we already know the user, take them to the preference page directly
+if (isset($_COOKIE['FacebookUserId'])) {
+    header("Location: postPage.php?known=1");
+    exit();
+}
+
+
+
 require("facebook-sdk/autoload.php");
 
 use Facebook\FacebookSession;
@@ -30,6 +38,8 @@ use Facebook\FacebookRequestException;
     
     <body><div class="container">
     <?php
+    
+    
     FacebookSession::setDefaultApplication('1584536598430668', '89d37b60577695dce29a3e1dc0c2d2fa');
 
     $ourLoginUrl = 'https://'.$_SERVER['HTTP_HOST'].'/facebookLogin.php';
@@ -38,9 +48,6 @@ use Facebook\FacebookRequestException;
 $helper = new FacebookRedirectLoginHelper($ourLoginUrl);
 $loginUrl = $helper->getLoginUrl(array('scope'=>'public_profile,user_birthday,email'));
 
-foreach($_COOKIE as $key=>$val) {
-    var_dump($key.': '.$val);
-}
 
 echo "<p align=\"center\"><a href=\"".$loginUrl."\" class=\"btn btn-lg btn-success\">Let's get started!</a></p>";
     ?>
