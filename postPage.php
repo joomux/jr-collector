@@ -33,21 +33,21 @@
                         <img src="assets/images/hawaiian.png" alt="Hawaiian">
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox" name="LikesHawaiian" value="TRUE" class="checkbox">I love Hawaiian!</label>
+                                <input type="checkbox" name="LikesHawaiian" value="TRUE" class="checkbox"<?php print ($_COOKIE['LikesHawaiian']=='TRUE'?' checked':''); ?>>I love Hawaiian!</label>
                         </div>
                     </div>
                     <div class="col-xs-4">
                         <img src="assets/images/supreme.png" alt="Supreme">
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox" name="LikesSupreme" value="TRUE" class="checkbox">I love Supreme!</label>
+                                <input type="checkbox" name="LikesSupreme" value="TRUE" class="checkbox"<?php print ($_COOKIE['LikesSupreme']=='TRUE'?' checked':''); ?>>I love Supreme!</label>
                         </div>
                     </div>
                     <div class="col-xs-4">
                         <img src="assets/images/garlic-bread.png" alt="Garlic Bread">
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox" name="LikesGarlicBread" value="TRUE" class="checkbox">I love Garlic Bread!</label>
+                                <input type="checkbox" name="LikesGarlicBread" value="TRUE" class="checkbox"<?php print ($_COOKIE['LikesGarlicBread']=='TRUE'?' checked':''); ?>>I love Garlic Bread!</label>
                         </div>
                     </div>
                 </div>
