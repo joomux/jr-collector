@@ -50,19 +50,32 @@ if ($newRowArray['EmailAddress'] == NULL){
 try {	
 	$myclient = new ET_Client();//true, false, $config);
 
-        //check if email address already exists
+        //try inserting first
+        $postDRRow = new ET_DataExtension_Row();
+        $postDRRow->authStub = $myclient;
+        $postDRRow->props = $newRowArray;
+        $postDRRow->Name = $DataExtensionNameForTesting;	
+        $postResult = $postDRRow->patch();
+        print_r('Post Status: '.($postResult->status ? 'true' : 'false')."<br>\n");
+        print 'Code: '.$postResult->code."\n";
+        print 'Message: '.$postResult->message."\n";	
+        print 'Result Count: '.count($postResult->results)."\n";
+        print 'Results: '."\n";
+        print_r($postResult->results);
+        print "\n---------------\n";
         
+        $success = $postResult->status;
         
-        if ($already_exists) {
-            
-        } else {
+        if (!$success) { //if it failed because of no duplicate available, then try going again
+            var_dump('Could not update, so trying to insert');
+         
             // Add a row to a DataExtension 
             //print_r("Add a row to a DataExtension  <br>\n");
             $postDRRow = new ET_DataExtension_Row();
             $postDRRow->authStub = $myclient;
             $postDRRow->props = $newRowArray;
             $postDRRow->Name = $DataExtensionNameForTesting;	
-            $postResult = $postDRRow->patch();
+            $postResult = $postDRRow->post();
             print_r('Post Status: '.($postResult->status ? 'true' : 'false')."<br>\n");
             print 'Code: '.$postResult->code."\n";
             print 'Message: '.$postResult->message."\n";	
@@ -74,8 +87,8 @@ try {
             $success = $postResult->status;
         }
 	
-	}
-	catch (Exception $e) {
+}
+catch (Exception $e) {
     echo 'Caught exception: ',  $e->getMessage(), "\n";
 }
 ?>
