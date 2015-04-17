@@ -40,7 +40,7 @@ use Facebook\FacebookRequestException;
     <?php
     
     
-    FacebookSession::setDefaultApplication('1584536598430668', '89d37b60577695dce29a3e1dc0c2d2fa');
+    FacebookSession::setDefaultApplication('1582789501938711', '88b0fbed06508cc5048a85454980d1a4');
 
     $ourLoginUrl = 'https://'.$_SERVER['HTTP_HOST'].'/facebookLogin.php';
 
