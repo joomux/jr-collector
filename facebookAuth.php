@@ -9,8 +9,8 @@ date_default_timezone_set("Australia/Sydney");
 
 //if we already know the user, take them to the preference page directly
 if (isset($_COOKIE['FacebookUserId'])) {
-    header("Location: postPage.php?known=1");
-    exit();
+   // header("Location: postPage.php?known=1");
+    //exit();
 }
 
 
