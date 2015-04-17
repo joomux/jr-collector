@@ -67,7 +67,7 @@ try {
         $success = $postResult->status;
         
         if (!$success) { //if it failed because of no duplicate available, then try going again
-            var_dump('Could not update, so trying to insert');
+            //var_dump('Could not update, so trying to insert');
          
             // Add a row to a DataExtension 
             //print_r("Add a row to a DataExtension  <br>\n");
