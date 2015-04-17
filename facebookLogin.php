@@ -45,7 +45,7 @@ if($session) {
       $session, 'GET', '/me'
     ))->execute()->getGraphObject(GraphUser::className());
 
-    $birthday = $user_profile->getBirthday();
+    //$birthday = $user_profile->getBirthday(); //we are no longer checking for this
     
     if (is_a($birthday,'DateTime')) {
         $birthday_string = $birthday->format('m/d/Y');
