@@ -1,4 +1,11 @@
-<!doctype html>
+<?php
+
+/* Written by David Coghill with assistance from Jeremy Roberts
+ * for Salesforce Marketing Cloud
+ * as Proof of Concept only
+ */
+
+?><!doctype html>
 <html lang="en">
     <head><title>Tell us what you love</title>
         <link type="text/css" rel="stylesheet" href="assets/css/bootstrap.min.css">

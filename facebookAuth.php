@@ -1,5 +1,10 @@
 <?php
 
+/* Written by David Coghill with assistance from Jeremy Roberts
+ * for Salesforce Marketing Cloud
+ * as Proof of Concept only
+ */
+
 ini_set("display_errors","on");
 error_reporting(E_ALL ^ E_NOTICE);
 
